@@ -1,5 +1,6 @@
 import * as functions from 'firebase-functions';
 import * as admin from 'firebase-admin';
+
 // Initialize firebase for accesing to its services 
 admin.initializeApp(functions.config().firebase);
 

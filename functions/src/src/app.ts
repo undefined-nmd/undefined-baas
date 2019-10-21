@@ -4,6 +4,8 @@ import * as cors from 'cors';
 import * as path from 'path';
 
 import * as apiController from './controllers/api';
+import * as postController from './controllers/post';
+import * as projectController from './controllers/project';
 import * as teamController from './controllers/team';
 
 // Create Express server
@@ -16,7 +18,12 @@ app.set('view engine', 'ejs');
 
 // Routes
 app.get('/api', apiController.getApi);
+app.get('/api/posts', postController.getPosts);
+app.get('/api/posts/:id', postController.getPost);
+app.get('/api/projects',projectController.getProjects);
+app.get('/api/projects/:id',projectController.getProject);
 app.get('/api/team', teamController.getTeam);
+app.get('/api/team/:id', teamController.getTeamMember);
 
 // 404
 app.get('*', (req: express.Request, res: express.Response) => {
