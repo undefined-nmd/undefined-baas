@@ -20,14 +20,32 @@ export const getPosts = async (req: Request, res: Response) => {
         (doc) => {
             posts.push({
                 id: doc.id,
-                data: doc.data()
+                data: doc.data(),
             });
         }
     );
-
     res.status(200).json({
-      data: posts
+        data: posts,
     });
+
+    //t
+    // let postRef = await db.collection('posts');
+    // let postList = []
+    // let posts = postRef.get()
+    //     .then(snapshot => {
+    //       snapshot.forEach(doc => {
+    //         postList.push({
+    //             data: doc.data()
+    //         });
+    //       });
+    //
+    //     })
+    //     .catch(err => {
+    //       console.log('Error getting documents', err);
+    //     });
+    //et
+
+
 
   } catch (error) {
     res.status(500).send(error);

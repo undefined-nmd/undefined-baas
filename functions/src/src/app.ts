@@ -19,6 +19,7 @@ app.set('view engine', 'ejs');
 // Routes
 app.get('/api', apiController.getApi);
 app.get('/api/posts', postController.getPosts);
+app.get('/api/test', postController.test);
 app.get('/api/posts/:id', postController.getPost);
 app.get('/api/projects',projectController.getProjects);
 app.get('/api/projects/:id',projectController.getProject);
